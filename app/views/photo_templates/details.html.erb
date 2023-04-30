@@ -1,1 +1,54 @@
-photo details
+<h1>Photo details</h1>
+
+<dl>
+
+  <dt>Image</dt>
+    <dd><img src = "<%=@the_image.image%>"></img></dd>
+
+  <dt>Caption</dt>
+    <dd><%=@the_image.caption%></dd>
+
+  <dt>Owner</dt>
+    <dd><%=@the_image.poster.username%></dd>
+
+  <dt>Posted</dt>
+    <dd><%=@the_image.created_at%></dd>
+
+  <dt>Edit photo</dt>
+    <dd>
+    
+      <form>
+        <label for = "img_url_edit">Image</label>
+        <input id = "img_url_edit" name = "img_url_edit" value = "<%=@the_image.image%>">
+
+        <label for = "edit_caption">Caption</label>
+        <textarea id = "edit_caption" name = "edit_caption"><%=@the_image.caption%></textarea>
+
+        <button>Update photo</button>
+      </form>
+
+    </dd>
+  
+  <dt>Delete photo</dt>
+    <dd><a href = "/">Delete photo (FIX)</a></dd>
+
+</dl>
+
+<h1>Comments</h1>
+
+<table>
+
+<tr>
+  <th>Commenter</th>
+  <th>Comment</th>
+  <th>Posted</th>
+</tr>
+
+<% @the_image.comments.each do |item| %>
+<tr>
+  <td><%= item.commenter.username%></td>
+  <td><%= item.body%></td>
+  <td><%= item.created_at%></td>
+</tr>
+<% end %>
+</table>
