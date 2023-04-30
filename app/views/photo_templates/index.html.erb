@@ -1,15 +1,15 @@
 <h1>List of photos</h1>
 
-<form>
+<form action = "/insert_photo">
   
-  <label for = "url">Image</label>
-  <input id = "url" name = "img_url" placeholder = "Enter a URL for the image...">
+  <label for = "image_box">Image</label>
+  <input id = "image_box" name = "query_image" placeholder = "Enter a URL for the image...">
 
-  <label for = "caption">Caption</label>
-  <textarea id "caption" name = "img_caption" placeholder = "Enter a caption for the photo..."></textarea>
+  <label for = "caption_box">Caption</label>
+  <textarea id ="caption_box" name = "query_caption" placeholder = "Enter a caption for the photo..."></textarea>
 
-  <label for = "owner">Owner ID</label>
-  <input id = "owner" name = "img_owner" placeholder = "Enter an ID of a User">
+  <label for = "owner_id_box">Owner ID</label>
+  <input id = "owner_id_box" name = "query_owner_id" placeholder = "Enter an ID of a User">
 
   <button>Add photo</button>
 
