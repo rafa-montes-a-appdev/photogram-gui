@@ -17,12 +17,12 @@
   <dt>Edit photo</dt>
     <dd>
     
-      <form>
-        <label for = "img_url_edit">Image</label>
-        <input id = "img_url_edit" name = "img_url_edit" value = "<%=@the_image.image%>">
+      <form action = "/edit_photo/<%=@the_image.id%>">
+        <label for = "edit_url_box">Image</label>
+        <input id = "edit_url_box" name = "query_edit_url" value = "<%=@the_image.image%>">
 
-        <label for = "edit_caption">Caption</label>
-        <textarea id = "edit_caption" name = "edit_caption"><%=@the_image.caption%></textarea>
+        <label for = "edit_caption_box">Caption</label>
+        <textarea id = "edit_caption_box" name = "query_edit_caption"><%=@the_image.caption%></textarea>
 
         <button>Update photo</button>
       </form>
@@ -55,16 +55,16 @@
 
 <h1>Add a new comment</h1>
 
-<form>
+<form action = "/insert_comment">
 
   <label for = "img_id_add">Photo ID</label>
-  <input id = "img_id_add" name = "img_id_add" value = "<%=@the_image.id%>">
+  <input id = "img_id_add" name = "query_photoid_comment" value = "<%=@the_image.id%>">
 
   <label for = "author_add">Author ID</label>
-  <input id = "author_add" name = "author_add">
+  <input id = "author_add" name = "query_authorid_comment">
 
   <label for = "new_comment">Comment</label>
-  <textarea id = "new_comment" name = "new_comment">Enter a new comment...</textarea>
+  <textarea id = "new_comment" name = "query_new_comment">Enter a new comment...</textarea>
 
   <button>Add comment</button>
 

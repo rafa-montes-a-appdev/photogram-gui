@@ -24,8 +24,18 @@ def insert
   new_photo.image = params.fetch("query_image")
   new_photo.owner_id = params.fetch("query_owner_id").to_i
   new_photo.save
-  redirect_to("/photos")
+  new_url = "/photos/" + new_photo.id.to_s
+  redirect_to(new_url)
 end
 
-  #  Parameters: {"quey_image"=>"sdsd", "query_caption"=>"fdsdfsd", "query_owner_id"=>"117"}
+def edit
+  img_id = params.fetch("path_id")
+  the_img = Photo.where({ :id => img_id }).first
+  the_img.image = params.fetch("query_edit_url")
+  the_img.caption = params.fetch("query_edit_caption")
+  the_img.save
+  new_url = "/photos/" + the_img.id.to_s
+  redirect_to(new_url)
+end
+
 end

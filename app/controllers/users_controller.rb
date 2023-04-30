@@ -18,4 +18,21 @@ class UsersController < ApplicationController
 
   end
 
+  def insert
+    new_user = User.new
+    new_user.username = params.fetch("query_username")
+    new_user.save
+    new_url = "/users/" + new_user.username
+    redirect_to(new_url)
+  end
+
+  def update
+    user_id = params.fetch("path_id")
+    the_user = User.where({ :id => user_id }).first
+    the_user.username = params.fetch("query_update_user")
+    the_user.save
+    new_url = "/users/" + the_user.username
+    redirect_to(new_url)
+  end
+
 end

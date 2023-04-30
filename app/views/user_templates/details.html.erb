@@ -8,9 +8,9 @@
   <dt>Edit user</dt>
     <dd>
     
-      <form>
-        <label for = "update_user" >Username</label>
-        <input id = "update_user" name = "update_user" value = "<%= @the_user.username%>">
+      <form action = "/update_user/<%=@the_user.id%>">
+        <label for = "update_user_box" >Username</label>
+        <input id = "update_user_box" name = "query_update_user" value = "<%= @the_user.username%>">
         <button>Update user</button>
       </form>
       
