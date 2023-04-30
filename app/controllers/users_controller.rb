@@ -9,7 +9,13 @@ class UsersController < ApplicationController
   def details
     username = params.fetch("path_id")
     @the_user = User.where({ :username => username }).at(0)
-    render({ :template => "user_templates/details.html.erb"})
+
+    if @the_user == nil
+      redirect_to("/404")
+    else
+      render({ :template => "user_templates/details.html.erb"})
+    end
+
   end
 
 end

@@ -30,7 +30,7 @@
     </dd>
   
   <dt>Delete photo</dt>
-    <dd><a href = "/">Delete photo (FIX)</a></dd>
+    <dd><a href = "/photos">Delete photo (FIX)</a></dd>
 
 </dl>
 
@@ -52,3 +52,20 @@
 </tr>
 <% end %>
 </table>
+
+<h1>Add a new comment</h1>
+
+<form>
+
+  <label for = "img_id_add">Photo ID</label>
+  <input id = "img_id_add" name = "img_id_add" value = "<%=@the_image.id%>">
+
+  <label for = "author_add">Author ID</label>
+  <input id = "author_add" name = "author_add">
+
+  <label for = "new_comment">Comment</label>
+  <textarea id = "new_comment" name = "new_comment">Enter a new comment...</textarea>
+
+  <button>Add comment</button>
+
+</form>
